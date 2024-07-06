@@ -1,7 +1,6 @@
 const url = "https://reqres.in/api/users?delay=3";
 
 const getPerson = async (url) => {
-    const loader = document.getElementById('loader');
     try {
 
         const response = await fetch(url);
