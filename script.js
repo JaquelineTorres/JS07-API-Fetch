@@ -1,8 +1,9 @@
 const url = "https://reqres.in/api/users?delay=3";
 
 const getPerson = async (url) => {
+    const loader = document.getElementById('loader');
     try {
-
+        loader.style.display = 'flex'; // Show loader
         const response = await fetch(url);
         const dataJson = await response.json();
         console.log(dataJson.data);
@@ -25,7 +26,9 @@ const getPerson = async (url) => {
     } catch (exception) {
         console.error("Error", exception);
 
-    } 
+    } finally {
+        loader.style.display = 'none'; // Hide loader
+    }
 };
 
 console.log(getPerson(url));
