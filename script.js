@@ -6,7 +6,6 @@ const getPerson = async (url) => {
         loader.style.display = 'flex'; // Show loader
         const response = await fetch(url);
         const dataJson = await response.json();
-        console.log(dataJson.data);
 
         const listPeople = dataJson.data.map(x => {
             return `
